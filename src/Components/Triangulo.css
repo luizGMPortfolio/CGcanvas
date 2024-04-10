@@ -1,0 +1,20 @@
+.triangulo{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    height: 40%;
+}
+.triangulo div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.triangulo div label{
+    font-size: 15px;
+}
+.triangulo div input{
+    height: 30px;
+}
