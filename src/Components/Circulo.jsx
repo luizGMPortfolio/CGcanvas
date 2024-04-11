@@ -4,8 +4,8 @@ import './circulo.css'
 
 const Circulo = ({ desenhar, setRange, range, setMoveX, MoveX, setMoveY, MoveY, setMove, Move, setAngulo, angulo }) => {
 
-  const [Position1X, setPosition1X] = useState(20);
-  const [Position1Y, setPosition1Y] = useState(20);
+  const [Position1X, setPosition1X] = useState(100);
+  const [Position1Y, setPosition1Y] = useState(100);
   const [raio, setRaio] = useState(100);
 
 

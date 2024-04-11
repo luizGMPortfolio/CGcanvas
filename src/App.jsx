@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, lazy } from 'react';
 
 import './App.css'
 import Quadrado from './Components/Quadrado';
@@ -24,7 +24,7 @@ function App() {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
 
-    // Limpar o canvas
+    // impar o canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     // Rotacionar
 
@@ -34,23 +34,58 @@ function App() {
     ctx.beginPath();
 
     ctx.moveTo(
-
       (x + (MoveX - 150) + (Move - 150) + (angulo - 180)),
       (y + (MoveY - 150) + (Move - 150) - (angulo - 180))
     );
     ctx.lineTo(
-      (width + (MoveX - 150) + (Move - 150) + (range - 150) + (angulo - 180)),
+      ( x + width + (MoveX - 150) + (Move - 150) + (range - 150) + (angulo - 180)),
       (y + (MoveY - 150) + (Move - 150) + (angulo - 180))
     );
     ctx.lineTo(
-      (width + (MoveX - 150) + (Move - 150) + (range - 150) - (angulo - 180)),
-      (height + (MoveY - 150) + (Move - 150) + (range - 150) + (angulo - 180))
+      ( x + width + (MoveX - 150) + (Move - 150) + (range - 150) - (angulo - 180)),
+      ( y + height + (MoveY - 150) + (Move - 150) + (range - 150) + (angulo - 180))
     );
     ctx.lineTo(
       (x + (MoveX - 150) + (Move - 150) - (angulo - 180)),
-      (height + (MoveY - 150) + (Move - 150) + (range - 150) - (angulo - 180))
+      ( y + height + (MoveY - 150) + (Move - 150) + (range - 150) - (angulo - 180))
     );
     ctx.fill();
+  }
+  function Rotacionar(x, y, width, height){
+
+    const deltaX = width/2 + x
+    const deltaY = height/2 + y
+
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+
+    // impar o canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Rotacionar
+
+    // Desenhar o quadrado
+    ctx.fillStyle = '#1c1c1c';
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+      (x * Math.cos(angulo * (Math.PI / 180))) + (MoveX - 150) + (Move - 150),
+      (y * Math.sin(angulo * (Math.PI / 180))  + (MoveX - 150) + (Move - 150))
+    );
+    ctx.lineTo(
+      ( x + width + (MoveX - 150) + (Move - 150) + (range - 150)),
+      (y + (MoveY - 150) + (Move - 150))
+    );
+    ctx.lineTo(
+      ( x + width + (MoveX - 150) + (Move - 150) + (range - 150)),
+      ( y + height + (MoveY - 150) + (Move - 150) + (range - 150))
+    );
+    ctx.lineTo(
+      (x + (MoveX - 150) + (Move - 150)),
+      ( y + height + (MoveY - 150) + (Move - 150) + (range - 150))
+    );
+    ctx.fill();
+
   }
   function DesenharTriangulo(px1, py1, px2, py2, px3, py3) {
 
@@ -93,7 +128,10 @@ function App() {
     ctx.fillStyle = '#1c1c1c';
 
     ctx.beginPath();
-    ctx.arc(canvas.width / 2, canvas.height / 2, 100, 0, 2 * Math.PI);
+    ctx.arc(
+      x + (MoveX - 150) + (Move - 150),
+      y + (MoveY - 150) + (Move - 150),
+      raio, 0, 2 * Math.PI);
     ctx.fill();
 
   }
@@ -102,6 +140,7 @@ function App() {
     [
       <Quadrado
         desenhar={DesenharQuadrado}
+        rotacionar={Rotacionar}
         setRange={setRange}
         range={range}
         setMoveX={setMoveX}
