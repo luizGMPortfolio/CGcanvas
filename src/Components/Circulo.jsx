@@ -4,8 +4,8 @@ import './circulo.css'
 
 const Circulo = ({ desenhar, setRange, range, setMoveX, MoveX, setMoveY, MoveY, setMove, Move, setAngulo, angulo }) => {
 
-  const [Position1X, setPosition1X] = useState(100);
-  const [Position1Y, setPosition1Y] = useState(100);
+  const [Position1X, setPosition1X] = useState(375);
+  const [Position1Y, setPosition1Y] = useState(350);
   const [raio, setRaio] = useState(100);
 
 
@@ -43,23 +43,23 @@ const Circulo = ({ desenhar, setRange, range, setMoveX, MoveX, setMoveY, MoveY, 
       <div className='ranges'>
 
         <h2>Redimencionar</h2>
-        <input type="range" className='range-input' min="0" max="300" value={range} onChange={(e) => setRange(parseInt(e.target.value))} />
+        <input type="range" className='range-input' min="0" max="600" value={range} onChange={(e) => setRange(parseInt(e.target.value))} />
 
         <h2>Rotacionar</h2>
         <input type="range" className='range-input' min="0" max="360" value={angulo} onChange={(e) => setAngulo(parseInt(e.target.value))} />
         <div className='range-input-XY'>
           <div>
             <h2>Mover X</h2>
-            <input type="range" className='range-input' min="0" max="300" value={MoveX} onChange={(e) => setMoveX(parseInt(e.target.value))} />
+            <input type="range" className='range-input' min="0" max="600" value={MoveX} onChange={(e) => setMoveX(parseInt(e.target.value))} />
           </div>
           <div>
             <h2>Mover Y</h2>
-            <input type="range" className='range-input' min="0" max="300" value={MoveY} onChange={(e) => setMoveY(parseInt(e.target.value))} />
+            <input type="range" className='range-input' min="0" max="600" value={MoveY} onChange={(e) => setMoveY(parseInt(e.target.value))} />
           </div>
 
         </div>
         <h2>Mover XY</h2>
-        <input type="range" className='range-input' min="0" max="300" value={Move} onChange={(e) => setMove(parseInt(e.target.value))} />
+        <input type="range" className='range-input' min="0" max="600" value={Move} onChange={(e) => setMove(parseInt(e.target.value))} />
       </div>
 
     </div>

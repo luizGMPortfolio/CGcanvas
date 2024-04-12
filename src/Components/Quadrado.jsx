@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import './Quadrado.css'
 
-const Quadrado = ({desenhar, rotacionar,setRange, range, setMoveX, MoveX, setMoveY, MoveY, setMove, Move, setAngulo, angulo}) => {
+const Quadrado = ({desenhar, setRange, range, setMoveX, MoveX, setMoveY, MoveY, setMove, Move, setAngulo, angulo}) => {
 
 
   const [Position1X, setPosition1X] = useState(300);
@@ -10,14 +10,23 @@ const Quadrado = ({desenhar, rotacionar,setRange, range, setMoveX, MoveX, setMov
   const [largura, setLargura] = useState(120);
   const [altura, setAltura] = useState(120);
 
+  const [alterX, setAlterX] = useState(Position1X + (MoveX - 300) + (Move - 300));
+  const [alterY, setAlterY] = useState(Position1Y + (MoveY - 300) + (Move - 300));
+  const [alterW, setAlterW] = useState(largura + (range - 300));
+  const [alterH, setAlterH] = useState(largura + (range - 300));
+
 
   useEffect(() => {
-    desenhar(Position1X, Position1Y, largura, altura)
-  }, [Position1X, Position1Y, largura, altura, range, MoveX, MoveY, Move]);
+    setAlterX(Position1X + (MoveX - 300) + (Move - 300));
+    setAlterY(Position1Y + (MoveY - 300) + (Move - 300));
+    setAlterW(largura);
+    setAlterH(altura);
 
-  useEffect(() => {
-    rotacionar(Position1X, Position1Y, largura, altura)
-  }, [angulo]);
+    desenhar(alterX, alterY, alterW, alterH)
+    
+  }, [Position1X, Position1Y, largura, altura, range, MoveX, MoveY, Move, angulo]);
+
+
 
   return (
     <div className='selections'>
@@ -28,12 +37,12 @@ const Quadrado = ({desenhar, rotacionar,setRange, range, setMoveX, MoveX, setMov
 
           <div>
             <label htmlFor="">Position X:</label>
-            <input type="number" value={Position1X} onChange={(e) => setPosition1X(parseInt(e.target.value))} />
+            <input type="number" value={alterX} onChange={(e) => setPosition1X(parseInt(e.target.value))} />
           </div>
 
           <div>
             <label htmlFor="">position Y:</label>
-            <input type="number" value={Position1Y} onChange={(e) => setPosition1Y(parseInt(e.target.value))} />
+            <input type="number" value={alterY} onChange={(e) => setPosition1Y(parseInt(e.target.value))} />
           </div>
 
         </div>
