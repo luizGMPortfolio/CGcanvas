@@ -53,6 +53,8 @@ function App() {
       centerY + ((x - centerX) * ((range - 300) / 100 + 1)) * Math.sin(angulo * (Math.PI / 180)) + ((y + height - centerY) * ((range - 300) / 100 + 1)) * Math.cos(angulo * (Math.PI / 180))
     );
     ctx.fill();
+
+    ctx.restore();
   }
   function DesenharTriangulo(px1, py1, px2, py2, px3, py3) {
 
@@ -84,6 +86,8 @@ function App() {
       centerY + ((px3 - centerX) * ((range - 300) / 100 + 1)) * Math.sin(angulo * (Math.PI / 180)) + ((py3 - centerY) * ((range - 300) / 100 + 1)) * Math.cos(angulo * (Math.PI / 180))
     );
     ctx.fill();
+
+    ctx.restore();
   }
   function DesenharCirculo(x, y, raio) {
 
@@ -101,9 +105,10 @@ function App() {
     ctx.arc(
       x + (MoveX - 300) + (Move - 300),
       y + (MoveY - 300) + (Move - 300),
-      raio, 0, 2 * Math.PI);
+      raio + (range -300), 0, 2 * Math.PI);
     ctx.fill();
 
+    ctx.restore();
   }
 
   const forms = (

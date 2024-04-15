@@ -3,20 +3,20 @@ import './Triangulo.css'
 
 const Triangulo = ({ desenhar, setRange, range, setMoveX, MoveX, setMoveY, MoveY, setMove, Move, setAngulo, angulo }) => {
 
-  const [Position1X, setPosition1X] = useState(100);
-  const [Position1Y, setPosition1Y] = useState(100);
-  const [alterX1, setAlterX1] = useState(Position1X + (MoveX - 300) + (Move - 300));
-  const [alterY1, setAlterY1] = useState(Position1Y + (MoveY - 300) + (Move - 300));
+  const [Position1X, setPosition1X] = useState(300);
+  const [Position1Y, setPosition1Y] = useState(200);
+  const [alterX1, setAlterX1] = useState(Position1X);
+  const [alterY1, setAlterY1] = useState(Position1Y);
 
-  const [Position2X, setPosition2X] = useState(200);
-  const [Position2Y, setPosition2Y] = useState(20);
-  const [alterX2, setAlterX2] = useState(Position2X + (MoveX - 300) + (Move - 300));
-  const [alterY2, setAlterY2] = useState(Position2Y + (MoveY - 300) + (Move - 300));
+  const [Position2X, setPosition2X] = useState(450);
+  const [Position2Y, setPosition2Y] = useState(500);
+  const [alterX2, setAlterX2] = useState(Position2X);
+  const [alterY2, setAlterY2] = useState(Position2Y);
 
-  const [Position3X, setPosition3X] = useState(150);
-  const [Position3Y, setPosition3Y] = useState(100);
-  const [alterX3, setAlterX3] = useState(Position3X + (MoveX - 300) + (Move - 300));
-  const [alterY3, setAlterY3] = useState(Position3Y + (MoveY - 300) + (Move - 300));
+  const [Position3X, setPosition3X] = useState(250);
+  const [Position3Y, setPosition3Y] = useState(500);
+  const [alterX3, setAlterX3] = useState(Position3X);
+  const [alterY3, setAlterY3] = useState(Position3Y);
 
   useEffect(() => {
     setAlterX1(Position1X + (MoveX - 300) + (Move - 300));
