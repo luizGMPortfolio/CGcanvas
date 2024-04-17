@@ -38,11 +38,11 @@ const Triangulo = ({ desenhar, setRange, range, setMoveX, MoveX, setMoveY, MoveY
 
           <div>
             <label htmlFor="">Position1 X:</label>
-            <input type="number" placeholder='X1' onChange={(e) => setPosition1X(parseInt(e.target.value))} />
+            <input type="number" placeholder='X1'  onChange={(e) => setPosition1X(parseInt(e.target.value))} />
           </div>
           <div>
             <label htmlFor="">position1 Y:</label>
-            <input type="number" placeholder='Y1' onChange={(e) => setPosition1Y(parseInt(e.target.value))} />
+            <input type="number" placeholder='Y1'  onChange={(e) => setPosition1Y(parseInt(e.target.value))} />
           </div>
 
         </div>
@@ -51,12 +51,12 @@ const Triangulo = ({ desenhar, setRange, range, setMoveX, MoveX, setMoveY, MoveY
 
           <div>
             <label htmlFor="">position2 X</label>
-            <input type="number" placeholder='X2' onChange={(e) => setPosition2X(parseInt(e.target.value))} />
+            <input type="number" placeholder='X2'onChange={(e) => setPosition2X(parseInt(e.target.value))} />
           </div>
 
           <div>
             <label htmlFor="">position2 Y</label>
-            <input type="number" placeholder='Y2' onChange={(e) => setPosition2Y(parseInt(e.target.value))} />
+            <input type="number" placeholder='Y2'  onChange={(e) => setPosition2Y(parseInt(e.target.value))} />
           </div>
 
         </div>

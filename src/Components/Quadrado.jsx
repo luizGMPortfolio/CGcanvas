@@ -37,12 +37,12 @@ const Quadrado = ({desenhar, setRange, range, setMoveX, MoveX, setMoveY, MoveY, 
 
           <div>
             <label htmlFor="">Position X:</label>
-            <input type="number" value={alterX} onChange={(e) => setPosition1X(parseInt(e.target.value))} />
+            <input type="number" placeholder='X1' onChange={(e) => setPosition1X(parseInt(e.target.value))} />
           </div>
 
           <div>
             <label htmlFor="">position Y:</label>
-            <input type="number" value={alterY} onChange={(e) => setPosition1Y(parseInt(e.target.value))} />
+            <input type="number" placeholder='Y1' onChange={(e) => setPosition1Y(parseInt(e.target.value))} />
           </div>
 
         </div>
@@ -51,12 +51,12 @@ const Quadrado = ({desenhar, setRange, range, setMoveX, MoveX, setMoveY, MoveY, 
 
           <div>
             <label htmlFor="">Width</label>
-            <input type="number" value={largura} onChange={(e) => setLargura(parseInt(e.target.value))} />
+            <input type="number" placeholder='Width' onChange={(e) => setLargura(parseInt(e.target.value))} />
           </div>
 
           <div>
             <label htmlFor="">Height</label>
-            <input type="number" value={altura} onChange={(e) => setAltura(parseInt(e.target.value))} />
+            <input type="number" placeholder='Height' onChange={(e) => setAltura(parseInt(e.target.value))} />
           </div>
 
         </div>
